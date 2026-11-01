@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Prompt Manager</title>
+  <link rel="stylesheet" href="../ui.css">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <header class="top">
+    <h1 data-i18n="extName"></h1>
+    <span class="pill" data-i18n="localOnly"></span>
+    <nav class="tabs" role="tablist">
+      <button type="button" data-tab="prompts" class="active" data-i18n="tabPrompts"></button>
+      <button type="button" data-tab="io" data-i18n="tabImportExport"></button>
+      <button type="button" data-tab="packs" data-i18n="tabPacks"></button>
+      <button type="button" data-tab="sync" data-i18n="tabSync"></button>
+      <button type="button" data-tab="backups" data-i18n="tabBackups"></button>
+      <button type="button" data-tab="settings" data-i18n="tabSettings"></button>
+      <button type="button" data-tab="pro" data-i18n="tabPro"></button>
+    </nav>
+  </header>
+  <div id="reminder" class="banner" hidden></div>
+  <div id="conflictBanner" class="banner warn" hidden><span id="conflictBannerText"></span> <button type="button" id="conflictBannerBtn" data-i18n="reviewConflicts"></button></div>
+
+  <main>
+    <section id="tab-prompts" class="tab grid">
+      <aside class="side">
+        <h3 data-i18n="folders"></h3>
+        <ul id="folderNav" class="nav"></ul>
+        <form id="addFolderForm" class="inline">
+          <input id="newFolder" maxlength="60" data-i18n-placeholder="newFolder">
+          <button type="submit" data-i18n="add"></button>
+        </form>
+        <h3 data-i18n="tags"></h3>
+        <div id="tagNav" class="chips"></div>
+      </aside>
+      <section class="listcol">
+        <div class="row">
+          <input id="search" type="search" data-i18n-placeholder="searchPlaceholder">
+          <button id="newPrompt" class="primary" type="button" data-i18n="newPrompt"></button>
+        </div>
+        <p id="count" class="muted small"></p>
+        <ul id="promptList" class="plist"></ul>
+      </section>
+      <section class="editor">
+        <form id="editForm">
+          <label for="fTitle" data-i18n="title"></label>
+          <input id="fTitle" required maxlength="200">
+          <div class="two">
+            <div>
+              <label for="fFolder" data-i18n="folder"></label>
+              <input id="fFolder" list="folderList" maxlength="60">
+              <datalist id="folderList"></datalist>
+            </div>
+            <div>
+              <label for="fTags" data-i18n="tagsComma"></label>
+              <input id="fTags">
+            </div>
+          </div>
+          <label for="fBody" data-i18n="body"></label>
+          <textarea id="fBody" rows="14" required></textarea>
+          <p class="muted small" data-i18n="templateHelp"></p>
+          <div id="varChips" class="chips"></div>
+          <div class="row actions">
+            <button class="primary" type="submit" data-i18n="save"></button>
+            <button id="dupBtn" type="button" data-i18n="duplicate"></button>
+            <button id="histBtn" type="button" data-i18n="history"></button>
+            <span class="spacer"></span>
+            <button id="delBtn" class="danger" type="button" data-i18n="delete"></button>
+          </div>
+          <p id="editMsg" class="small" role="status"></p>
+        </form>
+      </section>
+    </section>
+
+    <section id="tab-io" class="tab card" hidden>
+      <h2 data-i18n="exportTitle"></h2>
+      <p class="muted" data-i18n="exportHelp"></p>
+      <button id="exportBtn" class="primary" type="button" data-i18n="exportBtn"></button>
+      <hr>
+      <h2 data-i18n="importTitle"></h2>
+      <input id="importFile" type="file" accept="application/json,.json">
+      <fieldset class="modes">
+        <label><input type="radio" name="mode" value="merge" checked> <span data-i18n="modeMerge"></span></label>
+        <label><input type="radio" name="mode" value="replace"> <span data-i18n="modeReplace"></span></label>
+      </fieldset>
+      <button id="importBtn" type="button" data-i18n="importBtn"></button>
+      <div id="importResult" class="result" role="status"></div>
+    </section>
+
+    <section id="tab-packs" class="tab" hidden>
+      <h2 data-i18n="tabPacks"></h2>
+      <p class="muted" data-i18n="packsHelp"></p>
+      <div id="packGrid" class="packgrid"></div>
+    </section>
+
+    <section id="tab-sync" class="tab card wide" hidden>
+      <h2 data-i18n="syncTitle"></h2>
+      <p class="muted" data-i18n="syncHelp"></p>
+      <label class="check"><input id="syncEnabled" type="checkbox"> <span data-i18n="syncEnable"></span></label>
+      <div class="row" style="margin-top:8px">
+        <label for="syncAdapter" data-i18n="syncAdapter"></label>
+        <select id="syncAdapter">
+          <option value="chrome-sync" data-i18n="adapterChrome"></option>
+          <option value="google-drive" disabled data-i18n="adapterDrive"></option>
+        </select>
+      </div>
+      <div id="syncStatus" class="statusbox"></div>
+      <div class="meter"><div id="syncMeter"></div></div>
+      <p id="syncUsage" class="muted small"></p>
+      <div class="row">
+        <button id="syncNow" type="button" class="primary" data-i18n="syncNow"></button>
+        <button id="syncReset" type="button" data-i18n="syncReset"></button>
+      </div>
+      <h3 data-i18n="conflictsTitle"></h3>
+      <p class="muted small" data-i18n="conflictsHelp"></p>
+      <div id="conflictList"></div>
+      <details class="why">
+        <summary data-i18n="syncWhyTitle"></summary>
+        <table class="tbl">
+          <thead><tr><th></th><th>chrome.storage.sync</th><th>Google Drive appDataFolder</th></tr></thead>
+          <tbody>
+            <tr><td data-i18n="cmpAccount"></td><td data-i18n="cmpChromeAccount"></td><td data-i18n="cmpDriveAccount"></td></tr>
+            <tr><td data-i18n="cmpSize"></td><td data-i18n="cmpChromeSize"></td><td data-i18n="cmpDriveSize"></td></tr>
+            <tr><td data-i18n="cmpSetup"></td><td data-i18n="cmpChromeSetup"></td><td data-i18n="cmpDriveSetup"></td></tr>
+            <tr><td data-i18n="cmpNetwork"></td><td data-i18n="cmpChromeNetwork"></td><td data-i18n="cmpDriveNetwork"></td></tr>
+          </tbody>
+        </table>
+      </details>
+    </section>
+
+    <section id="tab-backups" class="tab card" hidden>
+      <h2 data-i18n="tabBackups"></h2>
+      <p class="muted" data-i18n="backupsHelp"></p>
+      <button id="backupNow" type="button" data-i18n="backupNow"></button>
+      <table class="tbl"><thead><tr><th data-i18n="date"></th><th data-i18n="reason"></th><th data-i18n="promptCount"></th><th></th></tr></thead>
+        <tbody id="backupRows"></tbody></table>
+    </section>
+
+    <section id="tab-settings" class="tab card" hidden>
+      <h2 data-i18n="tabSettings"></h2>
+      <label class="check"><input id="sFloating" type="checkbox"> <span data-i18n="settingFloating"></span></label>
+      <p class="muted small" data-i18n="shortcutHelp"></p>
+      <p class="muted small" data-i18n="languageHelp"></p>
+      <h3 data-i18n="historyTitle"></h3>
+      <div class="two">
+        <div><label for="sHistMax" data-i18n="historyMaxVersions"></label><input id="sHistMax" type="number" min="1" max="500"></div>
+        <div><label for="sHistDays" data-i18n="historyMaxDays"></label><input id="sHistDays" type="number" min="0" max="3650"></div>
+      </div>
+      <p class="muted small" data-i18n="historyPolicyHelp"></p>
+      <button id="sHistApply" type="button" data-i18n="apply"></button> <span id="sHistMsg" class="small"></span>
+      <h3 data-i18n="privacyTitle"></h3>
+      <p class="muted" data-i18n="privacyText"></p>
+    </section>
+
+    <section id="tab-pro" class="tab card" hidden>
+      <h2 data-i18n="tabPro"></h2>
+      <p id="licenseStatus" class="banner"></p>
+      <div class="row">
+        <input id="licenseKey" disabled data-i18n-placeholder="licenseKey">
+        <button id="activateBtn" type="button" disabled data-i18n="activate"></button>
+      </div>
+      <div class="two plans">
+        <div><h3 data-i18n="planFree"></h3><ul id="planFree"></ul></div>
+        <div><h3 data-i18n="planPro"></h3><ul id="planPro"></ul></div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="histDialog">
+    <div class="dlg-head"><strong id="histTitle"></strong><span class="spacer"></span><button type="button" id="histClose" class="ghost" data-i18n="close"></button></div>
+    <div class="dlg-body">
+      <ul id="histList" class="nav histlist"></ul>
+      <div class="histview">
+        <div class="row small"><span id="histCompare" class="muted"></span><span class="spacer"></span>
+          <label class="check"><input type="radio" name="dmode" value="words" checked> <span data-i18n="diffWords"></span></label>
+          <label class="check"><input type="radio" name="dmode" value="lines"> <span data-i18n="diffLines"></span></label></div>
+        <div id="histDiff" class="diff"></div>
+        <div class="row actions"><span id="histMeta" class="muted small"></span><span class="spacer"></span><button id="histRestore" type="button" class="primary" data-i18n="restoreVersion"></button></div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="../lib/schema.js"></script>
+  <script src="../lib/io.js"></script>
+  <script src="../lib/search.js"></script>
+  <script src="../lib/store.js"></script>
+  <script src="../lib/template.js"></script>
+  <script src="../lib/license.js"></script>
+  <script src="../lib/diff.js"></script>
+  <script src="../packs/code.js"></script>
+  <script src="../packs/marketing.js"></script>
+  <script src="../packs/crypto.js"></script>
+  <script src="../packs/writing.js"></script>
+  <script src="../lib/packs.js"></script>
+  <script src="../lib/sync.js"></script>
+  <script src="../lib/i18n.js"></script>
+  <script src="options.js"></script>
+  <script src="pro.js"></script>
+</body>
+</html>

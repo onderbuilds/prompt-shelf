@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Prompt Manager</title>
+  <link rel="stylesheet" href="../ui.css">
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+  <header class="bar">
+    <strong data-i18n="extShort"></strong>
+    <span class="spacer"></span>
+    <button id="manage" class="ghost" type="button" data-i18n="manage"></button>
+    <button id="close" class="ghost icon" type="button" data-i18n-title="close" hidden>✕</button>
+  </header>
+  <section id="listView">
+    <div class="filters">
+      <input id="q" type="search" autocomplete="off" data-i18n-placeholder="searchPlaceholder">
+      <select id="folder"></select>
+    </div>
+    <ul id="list" class="list" role="listbox"></ul>
+    <p id="empty" class="muted" hidden data-i18n="emptyList"></p>
+  </section>
+  <section id="formView" hidden>
+    <h2 id="formTitle"></h2>
+    <form id="varForm"></form>
+    <details>
+      <summary data-i18n="preview"></summary>
+      <pre id="preview"></pre>
+    </details>
+  </section>
+  <footer><span id="status" role="status"></span></footer>
+  <script src="../lib/schema.js"></script>
+  <script src="../lib/io.js"></script>
+  <script src="../lib/search.js"></script>
+  <script src="../lib/store.js"></script>
+  <script src="../lib/template.js"></script>
+  <script src="../lib/i18n.js"></script>
+  <script src="panel.js"></script>
+</body>
+</html>
