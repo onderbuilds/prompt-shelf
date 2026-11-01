@@ -1,0 +1,524 @@
+{
+  "extName": {
+    "message": "Yerel Prompt Yöneticisi"
+  },
+  "extShort": {
+    "message": "Promptlar"
+  },
+  "extDescription": {
+    "message": "ChatGPT, Claude, Gemini ve Grok için reklamsız, yalnızca yerel prompt kütüphanesi. Hesap yok, takip yok."
+  },
+  "cmdToggle": {
+    "message": "Bu sayfada prompt panelini aç"
+  },
+  "openPanel": {
+    "message": "Kayıtlı prompt ekle"
+  },
+  "manage": {
+    "message": "Yönet"
+  },
+  "close": {
+    "message": "Kapat"
+  },
+  "searchPlaceholder": {
+    "message": "Başlık, metin, #etiket ara…"
+  },
+  "allFolders": {
+    "message": "Tüm klasörler"
+  },
+  "noFolder": {
+    "message": "Klasörsüz"
+  },
+  "emptyList": {
+    "message": "Prompt bulunamadı. Yönet bölümünden ekleyin."
+  },
+  "templateBadge": {
+    "message": "şablon"
+  },
+  "preview": {
+    "message": "Önizleme"
+  },
+  "insert": {
+    "message": "Ekle"
+  },
+  "copy": {
+    "message": "Kopyala"
+  },
+  "back": {
+    "message": "Geri"
+  },
+  "inserted": {
+    "message": "Eklendi ✓"
+  },
+  "copied": {
+    "message": "Panoya kopyalandı"
+  },
+  "copiedFallback": {
+    "message": "Burada prompt kutusu bulunamadı — panoya kopyalandı. Ctrl/Cmd+V ile yapıştırın."
+  },
+  "insertFailed": {
+    "message": "Eklenemedi veya kopyalanamadı. Promptu açıp elle kopyalayın."
+  },
+  "copyFailed": {
+    "message": "Kopyalama başarısız"
+  },
+  "localOnly": {
+    "message": "Yalnızca bu tarayıcıda saklanır"
+  },
+  "tabPrompts": {
+    "message": "Promptlar"
+  },
+  "tabImportExport": {
+    "message": "İçe / Dışa aktar"
+  },
+  "tabBackups": {
+    "message": "Yedekler"
+  },
+  "tabSettings": {
+    "message": "Ayarlar"
+  },
+  "tabPro": {
+    "message": "Pro"
+  },
+  "folders": {
+    "message": "Klasörler"
+  },
+  "tags": {
+    "message": "Etiketler"
+  },
+  "newFolder": {
+    "message": "Yeni klasör"
+  },
+  "add": {
+    "message": "Ekle"
+  },
+  "newPrompt": {
+    "message": "Yeni prompt"
+  },
+  "countOf": {
+    "message": "$2 prompttan $1 tanesi"
+  },
+  "title": {
+    "message": "Başlık"
+  },
+  "folder": {
+    "message": "Klasör"
+  },
+  "tagsComma": {
+    "message": "Etiketler (virgülle)"
+  },
+  "body": {
+    "message": "Prompt metni"
+  },
+  "templateHelp": {
+    "message": "Değişken için {{ad}}, varsayılanlı değişken için {{ton|samimi}} yazın. Eklerken doldurursunuz."
+  },
+  "save": {
+    "message": "Kaydet"
+  },
+  "duplicate": {
+    "message": "Çoğalt"
+  },
+  "delete": {
+    "message": "Sil"
+  },
+  "rename": {
+    "message": "Yeniden adlandır"
+  },
+  "renameFolder": {
+    "message": "Yeni klasör adı"
+  },
+  "saved": {
+    "message": "Kaydedildi"
+  },
+  "copySuffix": {
+    "message": "(kopya)"
+  },
+  "confirmDelete": {
+    "message": "\"$1\" silinsin mi? Geri alınamaz (emin değilseniz önce dışa aktarın)."
+  },
+  "confirmDeleteFolder": {
+    "message": "\"$1\" klasörü silinsin mi? İçindeki promptlar silinmez, \"Klasörsüz\"e taşınır."
+  },
+  "folderLimit": {
+    "message": "Ücretsiz plan $1 klasör içerir. (Pro henüz yok.)"
+  },
+  "exportTitle": {
+    "message": "Dışa aktar"
+  },
+  "exportHelp": {
+    "message": "Tüm prompt ve klasörleri JSON dosyası olarak indirir. Güvenli bir yerde saklayın — bu sizin yedeğiniz."
+  },
+  "exportBtn": {
+    "message": "JSON indir"
+  },
+  "importTitle": {
+    "message": "İçe aktar"
+  },
+  "modeMerge": {
+    "message": "Birleştir (hiçbir şey silinmez; çakışanlar kopya olarak eklenir)"
+  },
+  "modeReplace": {
+    "message": "Değiştir (önce otomatik yedek alınır)"
+  },
+  "importBtn": {
+    "message": "İçe aktar"
+  },
+  "chooseFile": {
+    "message": "Önce bir JSON dosyası seçin."
+  },
+  "confirmReplace": {
+    "message": "Mevcut tüm promptlar dosyayla değiştirilsin mi? Önce yedek alınacak."
+  },
+  "importDone": {
+    "message": "İçe aktarıldı: $1 eklendi, $2 aynısı atlandı, $3 çakışma kopya olarak eklendi."
+  },
+  "importInvalid": {
+    "message": "$1 geçersiz kayıt atlandı:"
+  },
+  "importFailed": {
+    "message": "İçe aktarma başarısız, hiçbir şey değişmedi:"
+  },
+  "backupMade": {
+    "message": "Önceki verinin yedeği alındı (Yedekler sekmesi)."
+  },
+  "backupsHelp": {
+    "message": "Değiştirme, geri yükleme ve veri geçişinden önce otomatik yedek alınır. Son 10 yedek bu tarayıcıda tutulur."
+  },
+  "backupNow": {
+    "message": "Şimdi yedekle"
+  },
+  "date": {
+    "message": "Tarih"
+  },
+  "reason": {
+    "message": "Neden"
+  },
+  "promptCount": {
+    "message": "Prompt"
+  },
+  "restore": {
+    "message": "Geri yükle"
+  },
+  "download": {
+    "message": "İndir"
+  },
+  "noBackups": {
+    "message": "Henüz yedek yok."
+  },
+  "confirmRestore": {
+    "message": "Bu yedek geri yüklensin mi? Mevcut veriniz önce yedeklenir."
+  },
+  "settingFloating": {
+    "message": "Desteklenen sitelerde yüzen düğmeyi göster"
+  },
+  "shortcutHelp": {
+    "message": "Kısayol: Alt+Shift+P paneli açar (chrome://extensions/shortcuts adresinden değiştirilebilir)."
+  },
+  "languageHelp": {
+    "message": "Dil tarayıcınızı izler (English / Türkçe)."
+  },
+  "privacyTitle": {
+    "message": "Gizlilik"
+  },
+  "privacyText": {
+    "message": "Eşitlemeyi açmadığınız sürece promptlarınız bu tarayıcıda kalır. Açarsanız kendi Chrome eşitleme alanınızda (Google hesabınız) saklanır ve bu eşitlemeyi Chrome yapar. Eklenti ağ isteği yapmaz; analitik ve reklam yoktur. Planlanan tek istisna isteğe bağlı Pro lisans kontrolüdür (Lemon Squeezy) ve bu sürümde kapalıdır."
+  },
+  "licenseDisabled": {
+    "message": "Pro lisanslama henüz aktif değil (yer tutucu). Tüm özellikler ücretsiz açık."
+  },
+  "licenseEnabled": {
+    "message": "Pro'yu etkinleştirmek için lisans anahtarınızı girin."
+  },
+  "licenseKey": {
+    "message": "Lisans anahtarı"
+  },
+  "activate": {
+    "message": "Etkinleştir"
+  },
+  "planFree": {
+    "message": "Ücretsiz (her zaman)"
+  },
+  "planPro": {
+    "message": "Pro (planlanan)"
+  },
+  "backupReminder": {
+    "message": "Son dışa aktarmanın üzerinden zaman geçti. Tarayıcı dışında bir kopya için promptlarınızı dışa aktarın."
+  },
+  "sampleFolder": {
+    "message": "Örnekler"
+  },
+  "sample1Title": {
+    "message": "Farklı bir tonda yeniden yaz"
+  },
+  "sample1Body": {
+    "message": "Aşağıdaki metni {{ton|samimi}} bir tonda, en fazla {{kelime|120}} kelimeyle yeniden yaz:\n\n{{metin}}"
+  },
+  "sample2Title": {
+    "message": "Kibar takip e-postası"
+  },
+  "sample2Body": {
+    "message": "{{ad}} kişisine {{konu}} hakkında kısa ve kibar bir takip e-postası yaz. Dil: {{dil|Türkçe}}."
+  },
+  "sample3Title": {
+    "message": "Bu kodu açıkla"
+  },
+  "sample3Body": {
+    "message": "Bu kodun ne yaptığını adım adım açıkla, sonra olası hataları listele:\n\n```\n\n```"
+  },
+  "tabPacks": {
+    "message": "Paketler"
+  },
+  "tabSync": {
+    "message": "Eşitleme"
+  },
+  "reviewConflicts": {
+    "message": "İncele"
+  },
+  "history": {
+    "message": "Geçmiş"
+  },
+  "packsHelp": {
+    "message": "Bu eklenti için yazılmış hazır şablonlar. Kurulum, bunları kütüphanenize normal prompt olarak kopyalar; kendi promptlarınızın üzerine asla yazılmaz. Kaldırma yalnızca düzenlemediğiniz paket promptlarını siler."
+  },
+  "syncTitle": {
+    "message": "Cihazlar arası eşitleme"
+  },
+  "syncHelp": {
+    "message": "Kendi Chrome eşitlemenizi kullanır (Chrome'da oturum açtığınız Google hesabı). Bizim hiçbir sunucumuz yoktur. Bu tarayıcıdaki yerel veri her zaman esas kaynaktır."
+  },
+  "syncEnable": {
+    "message": "Promptlarımı Chrome eşitlemesiyle eşitle"
+  },
+  "syncAdapter": {
+    "message": "Depolama"
+  },
+  "adapterChrome": {
+    "message": "Chrome eşitleme (varsayılan, sıkıştırılmış ~90 KB'a kadar)"
+  },
+  "adapterDrive": {
+    "message": "Google Drive uygulama klasörü (henüz yok)"
+  },
+  "syncNow": {
+    "message": "Şimdi eşitle"
+  },
+  "syncReset": {
+    "message": "Bulut kopyasını bu cihazla değiştir"
+  },
+  "conflictsTitle": {
+    "message": "Çakışmalar"
+  },
+  "conflictsHelp": {
+    "message": "Aynı prompt iki cihazda farklı şekilde değiştiyse iki sürüm de saklanır. Birini seçin ya da ikisini de tutun."
+  },
+  "syncWhyTitle": {
+    "message": "Neden Google Drive değil de Chrome eşitleme?"
+  },
+  "cmpAccount": {
+    "message": "Gereken hesap"
+  },
+  "cmpChromeAccount": {
+    "message": "Bizden yok; kullanıcının Chrome oturumu"
+  },
+  "cmpDriveAccount": {
+    "message": "Bizim Google Cloud projesi + OAuth istemcisi gerekir"
+  },
+  "cmpSize": {
+    "message": "Boyut sınırı"
+  },
+  "cmpChromeSize": {
+    "message": "Toplam 100 KB, öğe başına 8 KB, 512 öğe"
+  },
+  "cmpDriveSize": {
+    "message": "Büyük (kullanıcının Drive kotası)"
+  },
+  "cmpSetup": {
+    "message": "Kullanıcı için kurulum"
+  },
+  "cmpChromeSetup": {
+    "message": "Tek onay kutusu"
+  },
+  "cmpDriveSetup": {
+    "message": "Google izin ekranı, kapsam onayı"
+  },
+  "cmpNetwork": {
+    "message": "Eklentinin ağ çağrıları"
+  },
+  "cmpChromeNetwork": {
+    "message": "Yok (Chrome arka planda eşitler)"
+  },
+  "cmpDriveNetwork": {
+    "message": "Evet, googleapis.com'a"
+  },
+  "historyTitle": {
+    "message": "Sürüm geçmişi"
+  },
+  "historyMaxVersions": {
+    "message": "Prompt başına saklanan sürüm"
+  },
+  "historyMaxDays": {
+    "message": "Şundan eski sürümleri sil (gün, 0 = asla)"
+  },
+  "historyPolicyHelp": {
+    "message": "Geçmiş yalnızca bu tarayıcıda saklanır. Her promptun en yeni sürümü her zaman tutulur."
+  },
+  "apply": {
+    "message": "Uygula"
+  },
+  "historyApplied": {
+    "message": "Kaydedildi. $1 eski sürüm silindi."
+  },
+  "diffWords": {
+    "message": "Kelime"
+  },
+  "diffLines": {
+    "message": "Satır"
+  },
+  "restoreVersion": {
+    "message": "Bu sürümü geri yükle"
+  },
+  "conflictBadge": {
+    "message": "çakışma"
+  },
+  "packBadge": {
+    "message": "paket"
+  },
+  "packLanguage": {
+    "message": "Paket dili"
+  },
+  "installed": {
+    "message": "Kurulu"
+  },
+  "packCount": {
+    "message": "$1 şablon"
+  },
+  "packEdited": {
+    "message": "$1 tanesini düzenlediniz"
+  },
+  "install": {
+    "message": "Kur"
+  },
+  "uninstall": {
+    "message": "Kaldır"
+  },
+  "packInstalled": {
+    "message": "Paket kuruldu: $1 prompt eklendi, $2 zaten vardı (değiştirilmedi)."
+  },
+  "packUninstalled": {
+    "message": "Paket kaldırıldı: düzenlenmemiş $1 prompt silindi, düzenlediğiniz $2 prompt kütüphanenizde kaldı."
+  },
+  "syncStatus_ok": {
+    "message": "Eşitlendi"
+  },
+  "syncStatus_ok_near_quota": {
+    "message": "Eşitlendi — Chrome eşitleme boyut sınırına yakın"
+  },
+  "syncStatus_pending": {
+    "message": "Değişiklikler yüklenmeyi bekliyor (hız sınırı)"
+  },
+  "syncStatus_waiting_remote": {
+    "message": "Başka bir cihazın yüklemesinin tamamlanması bekleniyor"
+  },
+  "syncStatus_backoff": {
+    "message": "Chrome eşitleme meşgul — daha sonra tekrar denenecek"
+  },
+  "syncStatus_over_quota": {
+    "message": "Chrome eşitleme için çok büyük — yüklenmiyor. Yerel promptlarınız güvende. Prompt silin/kısaltın veya yedek alın."
+  },
+  "syncStatus_remote_corrupt": {
+    "message": "Bulut kopyası okunamıyor. Yerelde hiçbir şey değişmedi. Bulut kopyasını bu cihazla değiştirebilirsiniz."
+  },
+  "syncStatus_error": {
+    "message": "Eşitleme hatası"
+  },
+  "syncStatus_unavailable": {
+    "message": "Bu depolama seçeneği henüz yok"
+  },
+  "syncStatus_disabled": {
+    "message": "Eşitleme kapalı. Promptlar yalnızca bu tarayıcıda."
+  },
+  "syncStatus_never": {
+    "message": "Henüz eşitlenmedi"
+  },
+  "syncLast": {
+    "message": "Son eşitleme: $1"
+  },
+  "syncStats": {
+    "message": "Son çalışma: $1 eklendi, $2 güncellendi, $3 silindi, $4 çakışma"
+  },
+  "syncUsage": {
+    "message": "$2 KB'ın $1 KB'ı kullanılıyor (%$3)"
+  },
+  "confirmSyncReset": {
+    "message": "Bulut kopyası bu cihazdaki promptlarla değiştirilsin mi? Mevcut bulut kopyası önce yerel yedek olarak kaydedilir."
+  },
+  "conflictBanner": {
+    "message": "$1 eşitleme çakışması kararınızı bekliyor. Siz seçene kadar iki sürüm de saklanır."
+  },
+  "conflictMeta": {
+    "message": "$1 tarihinde $2 cihazında değişti"
+  },
+  "conflictMain": {
+    "message": "Sürüm A (asıl kayıt)"
+  },
+  "conflictCopy": {
+    "message": "Sürüm B (çakışan kopya)"
+  },
+  "conflictDiff": {
+    "message": "Farklar (A → B)"
+  },
+  "keepMain": {
+    "message": "A'yı tut"
+  },
+  "keepCopy": {
+    "message": "B'yi tut"
+  },
+  "keepBoth": {
+    "message": "İkisini de tut"
+  },
+  "noConflicts": {
+    "message": "Çakışma yok."
+  },
+  "historyOf": {
+    "message": "Geçmiş: $1"
+  },
+  "currentVersion": {
+    "message": "Güncel sürüm"
+  },
+  "noHistory": {
+    "message": "Henüz eski sürüm yok. Bu promptu her değiştirdiğinizde bir sürüm kaydedilir."
+  },
+  "compareWithCurrent": {
+    "message": "$1, güncel sürümle karşılaştırılıyor"
+  },
+  "diffSummary": {
+    "message": "+$1 / −$2 satır"
+  },
+  "reason_edit": {
+    "message": "düzenleme"
+  },
+  "reason_deleted": {
+    "message": "silindi"
+  },
+  "reason_sync": {
+    "message": "eşitlemeyle değişti"
+  },
+  "reason_sync_deleted": {
+    "message": "eşitlemeyle silindi"
+  },
+  "reason_before_restore_v_": {
+    "message": "geri yükleme öncesi"
+  },
+  "reason_folder_rename": {
+    "message": "klasör adı değişti"
+  },
+  "reason_folder_delete": {
+    "message": "klasör silindi"
+  },
+  "reason_conflict_resolved": {
+    "message": "çakışma çözüldü"
+  },
+  "reason_conflict_discarded": {
+    "message": "çakışan kopya atıldı"
+  }
+}

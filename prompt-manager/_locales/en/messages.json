@@ -1,0 +1,524 @@
+{
+  "extName": {
+    "message": "Local Prompt Manager"
+  },
+  "extShort": {
+    "message": "Prompts"
+  },
+  "extDescription": {
+    "message": "Ad-free, local-only prompt library for ChatGPT, Claude, Gemini and Grok. No account, no tracking."
+  },
+  "cmdToggle": {
+    "message": "Open the prompt panel on the current page"
+  },
+  "openPanel": {
+    "message": "Insert a saved prompt"
+  },
+  "manage": {
+    "message": "Manage"
+  },
+  "close": {
+    "message": "Close"
+  },
+  "searchPlaceholder": {
+    "message": "Search title, text, #tag…"
+  },
+  "allFolders": {
+    "message": "All folders"
+  },
+  "noFolder": {
+    "message": "No folder"
+  },
+  "emptyList": {
+    "message": "No prompts found. Add some under Manage."
+  },
+  "templateBadge": {
+    "message": "template"
+  },
+  "preview": {
+    "message": "Preview"
+  },
+  "insert": {
+    "message": "Insert"
+  },
+  "copy": {
+    "message": "Copy"
+  },
+  "back": {
+    "message": "Back"
+  },
+  "inserted": {
+    "message": "Inserted ✓"
+  },
+  "copied": {
+    "message": "Copied to clipboard"
+  },
+  "copiedFallback": {
+    "message": "No prompt box found here — copied to clipboard instead. Paste with Ctrl/Cmd+V."
+  },
+  "insertFailed": {
+    "message": "Could not insert or copy. Open the prompt and copy it manually."
+  },
+  "copyFailed": {
+    "message": "Copy failed"
+  },
+  "localOnly": {
+    "message": "Stored only in this browser"
+  },
+  "tabPrompts": {
+    "message": "Prompts"
+  },
+  "tabImportExport": {
+    "message": "Import / Export"
+  },
+  "tabBackups": {
+    "message": "Backups"
+  },
+  "tabSettings": {
+    "message": "Settings"
+  },
+  "tabPro": {
+    "message": "Pro"
+  },
+  "folders": {
+    "message": "Folders"
+  },
+  "tags": {
+    "message": "Tags"
+  },
+  "newFolder": {
+    "message": "New folder"
+  },
+  "add": {
+    "message": "Add"
+  },
+  "newPrompt": {
+    "message": "New prompt"
+  },
+  "countOf": {
+    "message": "$1 of $2 prompts"
+  },
+  "title": {
+    "message": "Title"
+  },
+  "folder": {
+    "message": "Folder"
+  },
+  "tagsComma": {
+    "message": "Tags (comma separated)"
+  },
+  "body": {
+    "message": "Prompt text"
+  },
+  "templateHelp": {
+    "message": "Use {{name}} for a variable, {{tone|friendly}} for a variable with a default. You fill them in when inserting."
+  },
+  "save": {
+    "message": "Save"
+  },
+  "duplicate": {
+    "message": "Duplicate"
+  },
+  "delete": {
+    "message": "Delete"
+  },
+  "rename": {
+    "message": "Rename"
+  },
+  "renameFolder": {
+    "message": "New folder name"
+  },
+  "saved": {
+    "message": "Saved"
+  },
+  "copySuffix": {
+    "message": "(copy)"
+  },
+  "confirmDelete": {
+    "message": "Delete \"$1\"? This cannot be undone (export first if unsure)."
+  },
+  "confirmDeleteFolder": {
+    "message": "Delete folder \"$1\"? Its prompts are kept and moved to \"No folder\"."
+  },
+  "folderLimit": {
+    "message": "The free plan includes $1 folders. (Pro is not available yet.)"
+  },
+  "exportTitle": {
+    "message": "Export"
+  },
+  "exportHelp": {
+    "message": "Downloads all prompts and folders as a JSON file. Keep it somewhere safe — it is your backup."
+  },
+  "exportBtn": {
+    "message": "Export JSON"
+  },
+  "importTitle": {
+    "message": "Import"
+  },
+  "modeMerge": {
+    "message": "Merge (keep everything; conflicting prompts are added as copies)"
+  },
+  "modeReplace": {
+    "message": "Replace (an automatic backup is made first)"
+  },
+  "importBtn": {
+    "message": "Import"
+  },
+  "chooseFile": {
+    "message": "Choose a JSON file first."
+  },
+  "confirmReplace": {
+    "message": "Replace all current prompts with the file? A backup will be created first."
+  },
+  "importDone": {
+    "message": "Imported: $1 added, $2 identical skipped, $3 conflicts added as copies."
+  },
+  "importInvalid": {
+    "message": "$1 invalid entries were skipped:"
+  },
+  "importFailed": {
+    "message": "Import failed, nothing was changed:"
+  },
+  "backupMade": {
+    "message": "A backup of the previous data was saved (see Backups)."
+  },
+  "backupsHelp": {
+    "message": "Automatic backups are taken before replace, restore and data migrations. The last 10 are kept in this browser."
+  },
+  "backupNow": {
+    "message": "Back up now"
+  },
+  "date": {
+    "message": "Date"
+  },
+  "reason": {
+    "message": "Reason"
+  },
+  "promptCount": {
+    "message": "Prompts"
+  },
+  "restore": {
+    "message": "Restore"
+  },
+  "download": {
+    "message": "Download"
+  },
+  "noBackups": {
+    "message": "No backups yet."
+  },
+  "confirmRestore": {
+    "message": "Restore this backup? Your current data is backed up first."
+  },
+  "settingFloating": {
+    "message": "Show the floating button on supported sites"
+  },
+  "shortcutHelp": {
+    "message": "Shortcut: Alt+Shift+P opens the panel (change it at chrome://extensions/shortcuts)."
+  },
+  "languageHelp": {
+    "message": "Language follows your browser (English / Türkçe)."
+  },
+  "privacyTitle": {
+    "message": "Privacy"
+  },
+  "privacyText": {
+    "message": "Your prompts stay in this browser unless you turn on Sync: then they are stored in your own Chrome sync storage (your Google account), which Chrome syncs itself. The extension makes no network requests, has no analytics and no ads. The only planned exception is an optional Pro license check with Lemon Squeezy, which is switched off in this version."
+  },
+  "licenseDisabled": {
+    "message": "Pro licensing is not active yet (placeholder). All features are unlocked for free."
+  },
+  "licenseEnabled": {
+    "message": "Enter your license key to activate Pro."
+  },
+  "licenseKey": {
+    "message": "License key"
+  },
+  "activate": {
+    "message": "Activate"
+  },
+  "planFree": {
+    "message": "Free (always)"
+  },
+  "planPro": {
+    "message": "Pro (planned)"
+  },
+  "backupReminder": {
+    "message": "It has been a while since your last export. Export your prompts to keep a copy outside the browser."
+  },
+  "sampleFolder": {
+    "message": "Examples"
+  },
+  "sample1Title": {
+    "message": "Rewrite in a different tone"
+  },
+  "sample1Body": {
+    "message": "Rewrite the following text in a {{tone|friendly}} tone, keep it under {{words|120}} words:\n\n{{text}}"
+  },
+  "sample2Title": {
+    "message": "Polite follow-up email"
+  },
+  "sample2Body": {
+    "message": "Write a short, polite follow-up email to {{name}} about {{topic}}. Language: {{language|English}}."
+  },
+  "sample3Title": {
+    "message": "Explain this code"
+  },
+  "sample3Body": {
+    "message": "Explain what this code does step by step, then list possible bugs:\n\n```\n\n```"
+  },
+  "tabPacks": {
+    "message": "Packs"
+  },
+  "tabSync": {
+    "message": "Sync"
+  },
+  "reviewConflicts": {
+    "message": "Review"
+  },
+  "history": {
+    "message": "History"
+  },
+  "packsHelp": {
+    "message": "Ready-made templates, written for this extension. Installing copies them into your library as normal prompts; your own prompts are never overwritten. Uninstalling removes only the pack prompts you did not edit."
+  },
+  "syncTitle": {
+    "message": "Sync across devices"
+  },
+  "syncHelp": {
+    "message": "Uses your own Chrome sync (the Google account you are signed in to Chrome with). No server of ours is involved. This browser's local data always stays the source of truth."
+  },
+  "syncEnable": {
+    "message": "Sync my prompts with Chrome sync"
+  },
+  "syncAdapter": {
+    "message": "Storage"
+  },
+  "adapterChrome": {
+    "message": "Chrome sync (default, up to ~90 KB compressed)"
+  },
+  "adapterDrive": {
+    "message": "Google Drive app folder (not available yet)"
+  },
+  "syncNow": {
+    "message": "Sync now"
+  },
+  "syncReset": {
+    "message": "Replace cloud copy with this device"
+  },
+  "conflictsTitle": {
+    "message": "Conflicts"
+  },
+  "conflictsHelp": {
+    "message": "When the same prompt was changed differently on two devices, both versions are kept. Pick one, or keep both."
+  },
+  "syncWhyTitle": {
+    "message": "Why Chrome sync and not Google Drive?"
+  },
+  "cmpAccount": {
+    "message": "Account needed"
+  },
+  "cmpChromeAccount": {
+    "message": "None from us; uses the user's Chrome sign-in"
+  },
+  "cmpDriveAccount": {
+    "message": "We need a Google Cloud project + OAuth client"
+  },
+  "cmpSize": {
+    "message": "Size limit"
+  },
+  "cmpChromeSize": {
+    "message": "100 KB total, 8 KB per item, 512 items"
+  },
+  "cmpDriveSize": {
+    "message": "Large (user's Drive quota)"
+  },
+  "cmpSetup": {
+    "message": "Setup for the user"
+  },
+  "cmpChromeSetup": {
+    "message": "One checkbox"
+  },
+  "cmpDriveSetup": {
+    "message": "Google consent screen, scope approval"
+  },
+  "cmpNetwork": {
+    "message": "Network calls by the extension"
+  },
+  "cmpChromeNetwork": {
+    "message": "None (Chrome syncs in the background)"
+  },
+  "cmpDriveNetwork": {
+    "message": "Yes, to googleapis.com"
+  },
+  "historyTitle": {
+    "message": "Version history"
+  },
+  "historyMaxVersions": {
+    "message": "Versions kept per prompt"
+  },
+  "historyMaxDays": {
+    "message": "Delete versions older than (days, 0 = never)"
+  },
+  "historyPolicyHelp": {
+    "message": "History is stored only in this browser. The newest version of each prompt is always kept."
+  },
+  "apply": {
+    "message": "Apply"
+  },
+  "historyApplied": {
+    "message": "Saved. $1 old versions removed."
+  },
+  "diffWords": {
+    "message": "Words"
+  },
+  "diffLines": {
+    "message": "Lines"
+  },
+  "restoreVersion": {
+    "message": "Restore this version"
+  },
+  "conflictBadge": {
+    "message": "conflict"
+  },
+  "packBadge": {
+    "message": "pack"
+  },
+  "packLanguage": {
+    "message": "Pack language"
+  },
+  "installed": {
+    "message": "Installed"
+  },
+  "packCount": {
+    "message": "$1 templates"
+  },
+  "packEdited": {
+    "message": "$1 edited by you"
+  },
+  "install": {
+    "message": "Install"
+  },
+  "uninstall": {
+    "message": "Uninstall"
+  },
+  "packInstalled": {
+    "message": "Pack installed: $1 prompts added, $2 already present (left unchanged)."
+  },
+  "packUninstalled": {
+    "message": "Pack removed: $1 unedited prompts deleted, $2 edited prompts kept in your library."
+  },
+  "syncStatus_ok": {
+    "message": "In sync"
+  },
+  "syncStatus_ok_near_quota": {
+    "message": "In sync — close to the Chrome sync size limit"
+  },
+  "syncStatus_pending": {
+    "message": "Changes waiting to upload (rate limit)"
+  },
+  "syncStatus_waiting_remote": {
+    "message": "Waiting for another device's upload to finish arriving"
+  },
+  "syncStatus_backoff": {
+    "message": "Chrome sync is busy — retrying later"
+  },
+  "syncStatus_over_quota": {
+    "message": "Too large for Chrome sync — not uploading. Your local prompts are safe. Remove or shorten prompts, or export a backup."
+  },
+  "syncStatus_remote_corrupt": {
+    "message": "The cloud copy cannot be read. Nothing was changed locally. You can replace the cloud copy with this device."
+  },
+  "syncStatus_error": {
+    "message": "Sync error"
+  },
+  "syncStatus_unavailable": {
+    "message": "This storage option is not available yet"
+  },
+  "syncStatus_disabled": {
+    "message": "Sync is off. Prompts stay only in this browser."
+  },
+  "syncStatus_never": {
+    "message": "Not synced yet"
+  },
+  "syncLast": {
+    "message": "Last sync: $1"
+  },
+  "syncStats": {
+    "message": "Last run: $1 added, $2 updated, $3 deleted, $4 conflicts"
+  },
+  "syncUsage": {
+    "message": "Using $1 KB of $2 KB ($3%)"
+  },
+  "confirmSyncReset": {
+    "message": "Replace the cloud copy with this device's prompts? The current cloud copy is saved as a local backup first."
+  },
+  "conflictBanner": {
+    "message": "$1 sync conflict(s) need your decision. Both versions are kept until you choose."
+  },
+  "conflictMeta": {
+    "message": "changed $1 on $2"
+  },
+  "conflictMain": {
+    "message": "Version A (kept under the original)"
+  },
+  "conflictCopy": {
+    "message": "Version B (conflicted copy)"
+  },
+  "conflictDiff": {
+    "message": "Differences (A → B)"
+  },
+  "keepMain": {
+    "message": "Keep A"
+  },
+  "keepCopy": {
+    "message": "Keep B"
+  },
+  "keepBoth": {
+    "message": "Keep both"
+  },
+  "noConflicts": {
+    "message": "No conflicts."
+  },
+  "historyOf": {
+    "message": "History: $1"
+  },
+  "currentVersion": {
+    "message": "Current version"
+  },
+  "noHistory": {
+    "message": "No earlier versions yet. A version is saved every time you change this prompt."
+  },
+  "compareWithCurrent": {
+    "message": "$1 compared with the current version"
+  },
+  "diffSummary": {
+    "message": "+$1 / −$2 lines"
+  },
+  "reason_edit": {
+    "message": "edit"
+  },
+  "reason_deleted": {
+    "message": "deleted"
+  },
+  "reason_sync": {
+    "message": "replaced by sync"
+  },
+  "reason_sync_deleted": {
+    "message": "deleted by sync"
+  },
+  "reason_before_restore_v_": {
+    "message": "before a restore"
+  },
+  "reason_folder_rename": {
+    "message": "folder renamed"
+  },
+  "reason_folder_delete": {
+    "message": "folder deleted"
+  },
+  "reason_conflict_resolved": {
+    "message": "conflict resolved"
+  },
+  "reason_conflict_discarded": {
+    "message": "conflict copy discarded"
+  }
+}
