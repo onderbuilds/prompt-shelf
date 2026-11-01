@@ -1,0 +1,29 @@
+{
+  "name": "prompt-shelf",
+  "version": "1.0.0",
+  "description": "Local prompt manager for ChatGPT, Claude, Gemini and Grok",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test:unit": "node --test tests/unit/*.test.js",
+    "build:mocks": "esbuild tests/mock-sites/src/pm.js --bundle --format=iife --outfile=tests/mock-sites/pm.bundle.js && esbuild tests/mock-sites/src/quill.js --bundle --format=iife --outfile=tests/mock-sites/quill.bundle.js",
+    "test:e2e": "node tests/e2e/run.js",
+    "test": "npm run test:unit && npm run test:e2e"
+  },
+  "keywords": [],
+  "author": "onderbuilds",
+  "license": "UNLICENSED",
+  "type": "commonjs",
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "playwright": "^1.64.1",
+    "prosemirror-example-setup": "^1.2.3",
+    "prosemirror-model": "^1.25.12",
+    "prosemirror-schema-basic": "^1.2.5",
+    "prosemirror-state": "^1.4.4",
+    "prosemirror-view": "^1.42.9",
+    "quill": "^2.0.3"
+  },
+  "private": true
+}

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Local Prompt Manager — ad-free prompt library for ChatGPT, Claude, Gemini & Grok</title>
+<meta name="description" content="A Chrome extension that keeps your prompts in your own browser. No ads, no account, no tracking. Join the waitlist.">
+<style>
+:root{--fg:#111827;--muted:#4b5563;--line:#e5e7eb;--accent:#2563eb;--soft:#eef3ff}
+*{box-sizing:border-box}body{margin:0;font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg)}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+nav{display:flex;align-items:center;gap:12px;padding:18px 0}nav b{font-size:18px}nav .sp{flex:1}
+.lang button{border:1px solid var(--line);background:#fff;border-radius:6px;padding:3px 9px;cursor:pointer;font:inherit;font-size:14px}
+.lang button[aria-pressed=true]{background:var(--soft);border-color:var(--accent);color:var(--accent)}
+.hero{padding:56px 0 40px;text-align:center}
+.hero h1{font-size:44px;line-height:1.15;margin:0 0 16px;letter-spacing:-.02em}
+.hero p{font-size:20px;color:var(--muted);max-width:680px;margin:0 auto 28px}
+.badge{display:inline-block;font-size:13px;background:#fef3c7;color:#92400e;padding:3px 10px;border-radius:12px;margin-bottom:18px}
+form{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+input[type=email]{min-width:280px;padding:12px 14px;border:1px solid #cbd5e1;border-radius:10px;font:inherit}
+button.cta{padding:12px 20px;border:0;border-radius:10px;background:var(--accent);color:#fff;font:inherit;font-weight:600;cursor:pointer}
+.note{font-size:13px;color:var(--muted);margin-top:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;padding:32px 0}
+.card{border:1px solid var(--line);border-radius:14px;padding:20px}.card h3{margin:0 0 6px;font-size:18px}.card p{margin:0;color:var(--muted);font-size:15px}
+h2{font-size:28px;margin:40px 0 12px}
+table{width:100%;border-collapse:collapse;font-size:15px}td,th{border-bottom:1px solid var(--line);padding:10px;text-align:left}
+.privacy{background:var(--soft);border-radius:14px;padding:22px;margin:32px 0}
+footer{color:var(--muted);font-size:13px;padding:32px 0;border-top:1px solid var(--line);margin-top:40px}
+[data-lang]{display:none}html[lang=en] [data-lang=en],html[lang=tr] [data-lang=tr]{display:revert}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><b>Local Prompt Manager</b><span class="sp"></span>
+    <span class="lang"><button type="button" data-set="en" aria-pressed="true">EN</button> <button type="button" data-set="tr" aria-pressed="false">TR</button></span></nav>
+
+  <section class="hero">
+    <span class="badge"><span data-lang="en">In development — not available yet</span><span data-lang="tr">Geliştiriliyor — henüz yayında değil</span></span>
+    <h1><span data-lang="en">Your prompts, one click away.<br>No ads. No account. No tracking.</span><span data-lang="tr">Promptlarınız tek tık uzağınızda.<br>Reklam yok. Hesap yok. Takip yok.</span></h1>
+    <p><span data-lang="en">A small Chrome extension that saves your best prompts in your own browser and inserts them into ChatGPT, Claude, Gemini and Grok — with fill-in templates like <code>{{tone|friendly}}</code>.</span><span data-lang="tr">En iyi promptlarınızı kendi tarayıcınızda saklayan ve ChatGPT, Claude, Gemini ile Grok'a tek tıkla ekleyen küçük bir Chrome eklentisi — <code>{{ton|samimi}}</code> gibi doldurulabilir şablonlarla.</span></p>
+    <form action="#TODO-waitlist-endpoint" method="post" id="waitlist">
+      <label for="email" style="position:absolute;left:-9999px">Email</label>
+      <input id="email" name="email" type="email" required placeholder="you@example.com" autocomplete="email">
+      <button class="cta" type="submit"><span data-lang="en">Join the waitlist</span><span data-lang="tr">Bekleme listesine katıl</span></button>
+    </form>
+    <p class="note" id="formNote"><span data-lang="en">We will email you once, when it launches. Unsubscribe anytime.</span><span data-lang="tr">Yalnızca yayına çıktığında bir kez e-posta atarız. İstediğiniz zaman çıkabilirsiniz.</span></p>
+  </section>
+
+  <section class="grid">
+    <div class="card"><h3><span data-lang="en">Stays on your device</span><span data-lang="tr">Cihazınızda kalır</span></h3><p><span data-lang="en">Prompts live in your browser's local storage. Nothing is uploaded.</span><span data-lang="tr">Promptlar tarayıcınızın yerel deposunda durur. Hiçbir şey yüklenmez.</span></p></div>
+    <div class="card"><h3><span data-lang="en">Never lose a prompt</span><span data-lang="tr">Promptunuz kaybolmaz</span></h3><p><span data-lang="en">JSON export/import, merge without overwriting, and automatic backups before risky changes.</span><span data-lang="tr">JSON dışa/içe aktarma, üzerine yazmadan birleştirme ve riskli değişikliklerden önce otomatik yedek.</span></p></div>
+    <div class="card"><h3><span data-lang="en">Templates that ask</span><span data-lang="tr">Soran şablonlar</span></h3><p><span data-lang="en">Write <code>{{topic}}</code> once; fill it in a small form each time you insert.</span><span data-lang="tr"><code>{{konu}}</code> yazın; her eklemede küçük bir formla doldurun.</span></p></div>
+    <div class="card"><h3><span data-lang="en">Folders, tags, search</span><span data-lang="tr">Klasör, etiket, arama</span></h3><p><span data-lang="en">Find the right prompt fast, in English or Turkish.</span><span data-lang="tr">Doğru promptu hızla bulun; Türkçe veya İngilizce.</span></p></div>
+  </section>
+
+  <h2><span data-lang="en">Free vs Pro (planned)</span><span data-lang="tr">Ücretsiz ve Pro (planlanan)</span></h2>
+  <table>
+    <tr><th></th><th><span data-lang="en">Free</span><span data-lang="tr">Ücretsiz</span></th><th>Pro</th></tr>
+    <tr><td><span data-lang="en">Unlimited prompts, templates, search, tags</span><span data-lang="tr">Sınırsız prompt, şablon, arama, etiket</span></td><td>✓</td><td>✓</td></tr>
+    <tr><td><span data-lang="en">Import/export and automatic backups</span><span data-lang="tr">İçe/dışa aktarma ve otomatik yedek</span></td><td>✓</td><td>✓</td></tr>
+    <tr><td><span data-lang="en">Folders</span><span data-lang="tr">Klasörler</span></td><td><span data-lang="en">up to 10</span><span data-lang="tr">10'a kadar</span></td><td><span data-lang="en">unlimited</span><span data-lang="tr">sınırsız</span></td></tr>
+    <tr><td><span data-lang="en">Sync between your computers (via your own Chrome sync, no server of ours)</span><span data-lang="tr">Bilgisayarlarınız arasında eşitleme (kendi Chrome eşitlemeniz, bizim sunucumuz yok)</span></td><td>—</td><td>✓</td></tr>
+    <tr><td><span data-lang="en">Prompt packs: code, marketing, crypto research, writing</span><span data-lang="tr">Prompt paketleri: kod, pazarlama, kripto araştırma, yazım</span></td><td>—</td><td>✓</td></tr>
+    <tr><td><span data-lang="en">Version history with diff and restore</span><span data-lang="tr">Farklarıyla sürüm geçmişi ve geri yükleme</span></td><td>—</td><td>✓</td></tr>
+    <tr><td><span data-lang="en">Backup reminders</span><span data-lang="tr">Yedekleme hatırlatıcıları</span></td><td>—</td><td>✓</td></tr>
+  </table>
+  <p class="note"><span data-lang="en">Pro pricing is not decided yet. Your prompts will never be locked behind a paywall. The crypto pack is for research and risk checks only — no signals, no price predictions, not financial advice.</span><span data-lang="tr">Pro fiyatı henüz belli değil. Promptlarınız hiçbir zaman ücret duvarının arkasına kilitlenmeyecek. Kripto paketi yalnızca araştırma ve risk kontrolü içindir — sinyal yok, fiyat tahmini yok, yatırım tavsiyesi değildir.</span></p>
+
+  <section class="privacy">
+    <h2 style="margin-top:0"><span data-lang="en">Privacy</span><span data-lang="tr">Gizlilik</span></h2>
+    <p><span data-lang="en">The extension has no analytics, no ads and makes no network requests. Your prompts are never sent to us or anyone else. If you turn on Sync, prompts are stored in your own Chrome sync storage (your Google account) — never on our servers. The only planned network exception is an optional Pro license check with our payment provider (Lemon Squeezy), which sends only your license key.</span><span data-lang="tr">Eklentide analitik ve reklam yoktur, ağ isteği yapmaz. Promptlarınız bize veya başkasına gönderilmez. Eşitlemeyi açarsanız promptlar kendi Chrome eşitleme alanınızda (Google hesabınız) saklanır — asla bizim sunucularımızda değil. Planlanan tek ağ istisnası, ödeme sağlayıcımızla (Lemon Squeezy) isteğe bağlı Pro lisans kontrolüdür ve yalnızca lisans anahtarınızı gönderir.</span></p>
+    <p><span data-lang="en">Waitlist: we only store your email to tell you about the launch. We do not sell or share it. Ask us to delete it anytime.</span><span data-lang="tr">Bekleme listesi: e-postanızı yalnızca yayını haber vermek için saklarız. Satmayız, paylaşmayız. İstediğiniz zaman silmemizi isteyebilirsiniz.</span></p>
+    <!-- TODO: add contact address + data controller details before publishing (KVKK/GDPR). -->
+  </section>
+
+  <footer><span data-lang="en">Not affiliated with OpenAI, Anthropic, Google or xAI. Product names are trademarks of their owners.</span><span data-lang="tr">OpenAI, Anthropic, Google veya xAI ile bağlantılı değildir. Ürün adları sahiplerinin ticari markalarıdır.</span></footer>
+</div>
+<script>
+  document.querySelectorAll('.lang button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.documentElement.lang = b.dataset.set;
+      document.querySelectorAll('.lang button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+    });
+  });
+  // Draft only: the form is not connected to anything.
+  document.getElementById('waitlist').addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('formNote').textContent = 'Draft page — the waitlist is not live yet. / Taslak sayfa — liste henüz aktif değil.';
+  });
+</script>
+</body>
+</html>
