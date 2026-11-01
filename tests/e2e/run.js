@@ -314,6 +314,7 @@ async function pick(frame, title) {
     const dec = await opt.evaluate(async () => { const r = await PM.decodeItems(await chrome.storage.sync.get(null)); return { status: r.status, n: r.payload.prompts.length, packs: Object.keys(r.payload.packs) }; });
     assert(dec.status === 'ok' && dec.packs.includes('crypto'), JSON.stringify(dec));
     assert(dec.n === 8, 'pristine pack prompts must not be uploaded; payload prompts=' + dec.n);
+    await opt.evaluate(() => { document.querySelector('details.why').open = true; });
     await opt.screenshot({ path: path.join(SHOTS, '14-sync-settings-en.png'), fullPage: true });
   });
 
@@ -343,6 +344,27 @@ async function pick(frame, title) {
     await opt.locator('.conflict').first().waitFor({ state: 'detached', timeout: 5000 });
     const after = await opt.evaluate(async () => (await PM.createStore(chrome.storage.local).load()).prompts.filter((p) => /cihaz [AB]/.test(p.body)).length);
     assert(after === 2, 'keep both -> 2 prompts, got ' + after);
+  });
+
+  await check('sync: over quota -> warning, nothing uploaded, local intact; recovers after cleanup', async () => {
+    const metaBefore = await opt.evaluate(async () => (await chrome.storage.sync.get('pms_meta')).pms_meta.dataHash);
+    const st = await opt.evaluate(async () => {
+      const s = PM.createStore(chrome.storage.local);
+      const rnd = (n) => Array.from({ length: n }, () => Math.random().toString(36).slice(2)).join(' ');
+      for (let i = 0; i < 12; i += 1) await s.upsertPrompt({ title: 'Huge ' + i, body: rnd(1200), folder: 'Quota test' });
+      return chrome.runtime.sendMessage({ type: 'PM_SYNC_NOW', force: true });
+    });
+    assert(st.status === 'over-quota', JSON.stringify(st.status));
+    await opt.locator('#syncStatus', { hasText: 'Too large' }).waitFor({ timeout: 5000 });
+    await opt.screenshot({ path: path.join(SHOTS, '18-sync-over-quota-en.png') });
+    const metaAfter = await opt.evaluate(async () => (await chrome.storage.sync.get('pms_meta')).pms_meta.dataHash);
+    assert(metaAfter === metaBefore, 'cloud copy changed while over quota');
+    const st2 = await opt.evaluate(async () => {
+      const s = PM.createStore(chrome.storage.local);
+      for (const p of (await s.load()).prompts.filter((x) => x.folder === 'Quota test')) await s.deletePrompt(p.id);
+      return chrome.runtime.sendMessage({ type: 'PM_SYNC_NOW', force: true });
+    });
+    assert(st2.status === 'ok', st2.status);
   });
 
   await check('sync: Google Drive option is disabled (no OAuth client, no network)', async () => {

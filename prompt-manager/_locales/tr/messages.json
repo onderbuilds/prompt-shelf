@@ -520,5 +520,8 @@
   },
   "reason_conflict_discarded": {
     "message": "çakışan kopya atıldı"
+  },
+  "syncedPill": {
+    "message": "Kendi Chrome eşitlemenizle eşitleniyor"
   }
 }

@@ -43,6 +43,8 @@ function pmProInit() {
     const data = O.data;
     const s = data.settings.sync || {};
     $('syncEnabled').checked = !!s.enabled;
+    const pill = document.querySelector('.top .pill');
+    pill.textContent = t(s.enabled ? 'syncedPill' : 'localOnly');
     $('syncAdapter').value = s.adapter || 'chrome-sync';
     const st = (await chrome.storage.local.get([PM.STATE_KEY]))[PM.STATE_KEY] || {};
     const status = s.enabled ? (st.status || 'never') : 'disabled';
@@ -92,7 +94,7 @@ function pmProInit() {
     } else {
       for (const l of PM.diffRich(a, b)) {
         if (l.op === 'mod') nodes.push(h('div', { class: 'l' }, l.words.map((w) => (w.op === 'eq' ? w.text : h(w.op === 'add' ? 'ins' : 'del', {}, w.text)))));
-        else nodes.push(h('div', { class: 'l ' + l.op }, l.op === 'eq' ? l.text : h(l.op === 'add' ? 'ins' : 'del', {}, l.text || ' ')));
+        else nodes.push(h('div', { class: 'l ' + l.op }, l.op === 'eq' ? (l.text || '\u00a0') : h(l.op === 'add' ? 'ins' : 'del', {}, l.text || '\u00a0')));
       }
     }
     el.replaceChildren(...nodes);

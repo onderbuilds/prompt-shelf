@@ -520,5 +520,8 @@
   },
   "reason_conflict_discarded": {
     "message": "conflict copy discarded"
+  },
+  "syncedPill": {
+    "message": "Synced via your own Chrome sync"
   }
 }
